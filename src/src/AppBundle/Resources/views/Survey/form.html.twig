@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}">
+{% endblock %}
+{% form_theme surveyForm '@App/Forms/survey-form-theme.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% if surveyForm.vars.submitted and surveyForm.vars.valid %}
+            <div class="alert alert-success">Thank you for your feedback!</div>
+        {% endif %}
+        {{ form_start(surveyForm) }}
+            <div class="form-group">
+                {{ form_errors(surveyForm.name) }}
+                {{ form_row(surveyForm.name, {
+                    'attr': {
+                        'class': 'form-control'
+                    }
+                }) }}
+            </div>
+        {{ form_rest(surveyForm) }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {{ form_end(surveyForm) }}
+    </div>
+{% endblock %}

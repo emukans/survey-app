@@ -1,0 +1,25 @@
+{# @App/Forms/survey-form-theme.html.twig #}
+
+{% block _survey_form_respondentAnswers_entry_widget %}
+    <div class="form-group">
+        {{ form_errors(form.answer) }}
+        {{ form_label(form.answer, ((form.answer.vars.required) ? form.answer.vars.label : form.answer.vars.label ~ ' (Optional)')) }}
+        {{ form_widget(form.answer, {
+            'attr': {
+                'class': 'form-control'
+            }
+        }) }}
+    </div>
+{% endblock %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <ul class="list-group">
+                {% for error in errors %}
+                    <li class="list-group-item list-group-item-danger">{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}

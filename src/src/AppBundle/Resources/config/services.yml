@@ -1,0 +1,14 @@
+services:
+    app.admin.question:
+        class: AppBundle\Admin\QuestionAdmin
+        arguments: [~, AppBundle\Entity\Question, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Question }
+        public: true
+
+    app.admin.survey:
+        class: AppBundle\Admin\SurveyAdmin
+        arguments: [~, AppBundle\Entity\Survey, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Survey }
+        public: true
