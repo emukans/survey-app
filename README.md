@@ -38,8 +38,16 @@ Please follow the instructions to set up the Symfony project.
         exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
     }
     ```
-4. Navigate `http://localhost:8080/admin` to get into admin panel or `http://localhost:8080/survey/workshop-feedback` to get into survey landing page.
-5. (Optional) If you launch the app first time, you need to create a user. Use the [instructions below](#user-creation).
+4. Update database configuration.
+    - Open `src/app/config/parameters.yml`
+    - Update database variables. By default it is:
+    - database_host: db
+    - database_port: 3306
+    - database_name: sample_db
+    - database_user: user
+    - database_password: password
+5. Navigate `http://localhost:8080/admin` to get into admin panel or `http://localhost:8080/survey/workshop-feedback` to get into survey landing page.
+6. (Optional) If you launch the app first time, you need to create a user. Use the [instructions below](#user-creation).
 
 ### User creation
 
