@@ -39,7 +39,18 @@ Please follow the instructions to set up the Symfony project.
     }
     ```
 4. Navigate `http://localhost:8080/admin` to get into admin panel or `http://localhost:8080/survey/workshop-feedback` to get into survey landing page.
+5. (Optional) If you launch the app first time, you need to create a user. Use the [instructions below](#user-creation).
 
+### User creation
+
+1. Get into php container
+    ```bash
+    docker-compose exec php bash
+    ```
+2. Create user via command prompt
+    ```bash
+    php bin/console fos:user:create
+    ```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
